@@ -22,7 +22,7 @@
       "id": 7,
       "nomeCompleto": "Maria Silva",
       "email": "maria@gmail.com",
-      "cidadeId": 1
+      "cidadeId": 3
     },
     {
       "id": 8,
@@ -83,12 +83,42 @@
       "email": "ana@gmail.com",
       "cidadeId": "1",
       "id": 156
+    },
+    {
+      "nomeCompleto": "Geronimo",
+      "email": "geronimo@gmail.com",
+      "cidadeId": 5,
+      "id": 157
     }
   ],
   "cidades": [
     {
       "nome": "Porto Alegre",
       "id": 1
+    },
+    {
+      "nome": "Novo Hamburgo",
+      "id": 2
+    },
+    {
+      "nome": "Taquara",
+      "id": 3
+    },
+    {
+      "nome": "Palmitinho",
+      "id": 4
+    },
+    {
+      "nome": "Caxias",
+      "id": 5
+    },
+    {
+      "nome": "Sapucaia do Sul",
+      "id": 6
+    },
+    {
+      "nome": "Tramandaí",
+      "id": 7
     }
   ]
 }
