@@ -8,7 +8,7 @@ export const errorInterceptor = (error: AxiosError) => {
   }
 
   if (error.response?.status === 401) {
-    // Do something
+    window.location.reload();
   }
 
   return Promise.reject(error);
