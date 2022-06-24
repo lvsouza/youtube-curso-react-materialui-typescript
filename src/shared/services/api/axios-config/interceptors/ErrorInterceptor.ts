@@ -8,6 +8,7 @@ export const errorInterceptor = (error: AxiosError) => {
   }
 
   if (error.response?.status === 401) {
+    localStorage.removeItem('APP_ACCESS_TOKEN');
     window.location.reload();
   }
 

@@ -1,3 +1,5 @@
+import { AxiosError } from 'axios';
+
 import { Environment } from '../../../environment';
 import { Api } from '../axios-config';
 
@@ -37,7 +39,7 @@ const getAll = async (page = 1, filter = ''): Promise<TPessoasComTotalCount | Er
     return new Error('Erro ao listar os registros.');
   } catch (error) {
     console.error(error);
-    return new Error((error as { message: string }).message || 'Erro ao listar os registros.');
+    return new Error((error as AxiosError).response?.data.errors.default || 'Erro ao listar os registros.');
   }
 };
 
@@ -52,7 +54,7 @@ const getById = async (id: number): Promise<IDetalhePessoa | Error> => {
     return new Error('Erro ao consultar o registro.');
   } catch (error) {
     console.error(error);
-    return new Error((error as { message: string }).message || 'Erro ao consultar o registro.');
+    return new Error((error as AxiosError).response?.data.errors.default || 'Erro ao consultar o registro.');
   }
 };
 
@@ -67,7 +69,7 @@ const create = async (dados: Omit<IDetalhePessoa, 'id'>): Promise<number | Error
     return new Error('Erro ao criar o registro.');
   } catch (error) {
     console.error(error);
-    return new Error((error as { message: string }).message || 'Erro ao criar o registro.');
+    return new Error((error as AxiosError).response?.data.errors.default || 'Erro ao criar o registro.');
   }
 };
 
@@ -76,7 +78,7 @@ const updateById = async (id: number, dados: IDetalhePessoa): Promise<void | Err
     await Api().put(`/pessoas/${id}`, dados);
   } catch (error) {
     console.error(error);
-    return new Error((error as { message: string }).message || 'Erro ao atualizar o registro.');
+    return new Error((error as AxiosError).response?.data.errors.default || 'Erro ao atualizar o registro.');
   }
 };
 
@@ -85,7 +87,7 @@ const deleteById = async (id: number): Promise<void | Error> => {
     await Api().delete(`/pessoas/${id}`);
   } catch (error) {
     console.error(error);
-    return new Error((error as { message: string }).message || 'Erro ao apagar o registro.');
+    return new Error((error as AxiosError).response?.data.errors.default || 'Erro ao apagar o registro.');
   }
 };
 
