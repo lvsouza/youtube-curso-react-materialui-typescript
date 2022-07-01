@@ -36,7 +36,7 @@ export const AutoCompleteCidade: React.FC<IAutoCompleteCidadeProps> = ({ isExter
     setIsLoading(true);
 
     debounce(() => {
-      CidadesService.getAll(1, busca)
+      CidadesService.getAll(1, busca, selectedId?.toString())
         .then((result) => {
           setIsLoading(false);
 
@@ -49,7 +49,7 @@ export const AutoCompleteCidade: React.FC<IAutoCompleteCidadeProps> = ({ isExter
           }
         });
     });
-  }, [busca]);
+  }, [busca, selectedId]);
 
   const autoCompleteSelectedOption = useMemo(() => {
     if (!selectedId) return null;
