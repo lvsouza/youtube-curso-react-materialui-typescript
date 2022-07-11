@@ -30,7 +30,7 @@ export const VSelect: React.FC<TVSelectProps> = ({ name, ...rest }) => {
       helperText={error}
       defaultValue={defaultValue}
 
-      value={value}
+      value={value || ''}
       onKeyDown={e => { error && clearError(); rest.onKeyDown?.(e); }}
       onChange={e => { setValue(e.target.value); rest.onChange?.(e); }}
     />
