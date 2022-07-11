@@ -19,9 +19,9 @@ type TCidadesComTotalCount = {
   totalCount: number;
 }
 
-const getAll = async (page = 1, filter = ''): Promise<TCidadesComTotalCount | Error> => {
+const getAll = async (page = 1, filter = '', id = 0): Promise<TCidadesComTotalCount | Error> => {
   try {
-    const urlRelativa = `/cidades?page=${page}&limit=${Environment.LIMITE_DE_LINHAS}&filter=${filter}`;
+    const urlRelativa = `/cidades?page=${page}&limit=${Environment.LIMITE_DE_LINHAS}&filter=${filter}&id=${id}`;
 
     const { data, headers } = await Api().get(urlRelativa);
 
