@@ -19,6 +19,7 @@
     "axios": "^0.26.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-number-format": "^5.0.0-beta.4",
     "react-router-dom": "6",
     "react-scripts": "5.0.0",
     "yup": "^0.32.11"
