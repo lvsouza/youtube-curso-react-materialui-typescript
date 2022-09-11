@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { TextField, TextFieldProps } from '@mui/material';
-import { NumericFormatProps, PatternFormat } from 'react-number-format';
+import { PatternFormatProps, PatternFormat } from 'react-number-format';
 import { useField } from '@unform/core';
 
 
-type TVTextFieldProps = Omit<NumericFormatProps, 'value'> & Omit<TextFieldProps, 'value'> & {
+type TVTextFieldProps = Omit<PatternFormatProps, 'value'> & Omit<TextFieldProps, 'value'> & {
   name: string;
 
   onValueChange?: (value: string) => void;
