@@ -28,7 +28,7 @@ export const VSwitch: React.FC<TVSwitchProps> = ({ name, ...rest }) => {
       defaultChecked={defaultValue}
 
       checked={value || false}
-      onChange={(e, checked) => { setValue(e.target.value); rest.onChange?.(e, checked); error && clearError(); }}
+      onChange={(e, checked) => { setValue(checked); rest.onChange?.(e, checked); error && clearError(); }}
     />
   );
 };
